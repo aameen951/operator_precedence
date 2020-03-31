@@ -1,13 +1,3 @@
-// NOTE(ameen): Before looking at this parser, make sure you look at parser_a.js. 
-//
-// This is a compressed version of 'parser_a' for handling precedence and associativity. It is data-driven by the
-// following table. 
-// This method is called the Precedence Climbing Method.
-//
-// Precedence Climbing Method:
-//   https://eli.thegreenplace.net/2012/08/02/parsing-expressions-by-precedence-climbing
-//   https://en.wikipedia.org/wiki/Operator-precedence_parser#Precedence_climbing_method
-// 
 
 const operators = {
   // NOTE(ameen): Under the hood, 'operators' data is copied into the token.
