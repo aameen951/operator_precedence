@@ -25,6 +25,14 @@ This parser can handle terms, factors, and exponents with the correct precedence
     5. Loop to 2.
     6. return the last left side.
 
+### Problems:
+
+After reading the code, you can see that the logic is the same in all functions. Only the operators are different. Also left-associative operators are very similar to right-associative.
+
+In this example there are only 3 levels of precedence so it doesn't matter that much but in a real language there could be more than 10 levels of precedence and each will have more code for error handling and building the AST nodes etc. which means there is going to be a lot of duplicate and error-prone code.
+
+How can you compress them into a single function? I suggest giving it a try yourself. Then look at `parser_b` for the compressed version of this code.
+
 ### Precedence Rules and Associativity:
     terms (add/sub): lowest precedence and left-associative.
     factors (mul/div): higher precedence and left-associative.
@@ -39,15 +47,9 @@ This parser can handle terms, factors, and exponents with the correct precedence
 
     power_expr     :=   operand        |  operand        **   power_expr
 
-After reading the code, you can see that the logic is the same in all functions. Only the operators are different. Also left-associative operators are very similar to right-associative.
-
-In this example there are only 3 levels of precedence so it doesn't matter that much but in a real language there could be more than 10 levels of precedence and each will have more code for error handling and building the AST nodes etc. which means there is going to be a lot of duplicate and error-prone code.
-
-How can you compress them into a single function? I suggest giving it a try yourself. Then look at `parser_b` for the compressed version of this code.
-
 ## 2. `parser_b`
 
-Before looking at this parser, make sure you understand the code in `parser_a`. 
+Before looking at this parser, make sure you understand `parser_a` method. 
 
 This is a compressed version of 'parser_a' for handling precedence and associativity. It is data-driven by the following table:
 
@@ -61,7 +63,7 @@ This is a compressed version of 'parser_a' for handling precedence and associati
 
 This method is called the **Precedence Climbing Method**.
 
-#### Precedence Climbing Method:
+### Precedence Climbing Method:
   - https://eli.thegreenplace.net/2012/08/02/parsing-expressions-by-precedence-climbing
   - https://en.wikipedia.org/wiki/Operator-precedence_parser#Precedence_climbing_method
  
