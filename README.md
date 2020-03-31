@@ -15,7 +15,7 @@ This parser can handle terms, factors, and exponents with the correct precedence
 - Right-associative operators should already be familiar:
     1. Parse the left side by calling the next precedence level
     2. Parse the operator.
-    3. Recuse to parse the right side.
+    3. Recurse to parse the right side.
     4. Combine left and right using the operator as the result.
 - Left-associative operators are the tricky ones: 
     1. Parse the left side by calling the next precedence level.
